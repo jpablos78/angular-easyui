@@ -26,11 +26,11 @@ export class AppComponent {
       children: [
         {
           text: 'Cambio de Clave',
-          routerLink: '/ambiente'
+          routerLink: '/cambio-clave'
         },
         {
           text: 'Favoritos',
-          routerLink: '/ambiente'
+          routerLink: '/favoritos'
         },
         {
           text: 'Ambiente',
@@ -67,15 +67,15 @@ export class AppComponent {
           children: [
             {
               text: 'Mantenimiento de Usuarios',
-              routerLink: '/ambiente'
+              routerLink: '/mantenimiento-usuarios'
             },
             {
               text: 'Cambio de Clave',
-              routerLink: '/ambiente'
+              routerLink: '/cambio-clave'
             },
             {
               text: 'Favoritos',
-              routerLink: '/ambiente'
+              routerLink: '/favoritos'
             }
           ]
         },
