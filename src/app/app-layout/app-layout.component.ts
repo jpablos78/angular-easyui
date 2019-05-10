@@ -1,4 +1,5 @@
 import { Component, Input, ViewChild, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 /*import { LayoutComponent } from 'ng-easyui/layout/layout.component';*/
 /*import { LayoutComponent } from './easyui/LayoutComponent';*/
 
@@ -25,7 +26,7 @@ import { Component, Input, ViewChild, ViewEncapsulation, Output, EventEmitter } 
                     <eui-sidemenu [data]="menus" [border]="false" [collapsed]="collapsed" (itemClick)="onItemClick($event)"></eui-sidemenu>
                 </div>
                 <div class="main-body f-full">
-                    <ng-content></ng-content>
+                    <ng-content> </ng-content>
                 </div>
             </div>
         </div>
@@ -38,17 +39,23 @@ export class AppLayoutComponent {
   @Input() title = null;
   @Output() itemClick = new EventEmitter();
 
-  width = 200;
+  width = 260;
   collapsed = false;
+
+  constructor(
+    private router: Router
+  ) { }
 
   toggle() {
     this.collapsed = !this.collapsed;
-    this.width = this.collapsed ? 50 : 200;
+    this.width = this.collapsed ? 50 : 260;
   }
 
   onItemClick(item) {
     this.itemClick.emit(item);
+
     if (!this.collapsed) {
+      // this.router.navigate([item.routerLink]);
       this.toggle();
     }
   }
